@@ -1,0 +1,301 @@
+:root {
+  --orange: #f25c00;
+  --orange-deep: #e05000;
+  --gray: #bdbdbd;
+  --muted: #8a8a8a;
+  --hint: #8d5a32;
+  --link: #0000ee;
+  --yellow: #ffe100;
+  --green: #39ff39;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.page {
+  width: 1024px;
+  margin: 0 auto;
+  min-height: 992px;
+  background: #000;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px 4px;
+  color: #c8c8c8;
+  font-size: 10px;
+  letter-spacing: 0.1px;
+}
+
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--orange);
+  border-bottom: 1px solid var(--orange);
+  margin: 2px 0 14px;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 18s linear infinite;
+}
+
+.ticker-track span {
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  padding: 3px 0 2px;
+  white-space: nowrap;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+h1 {
+  margin: 16px 0 0;
+  color: var(--orange);
+  font-family: "Arial Black", Impact, Haettenschweiler, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  text-align: center;
+  line-height: 1;
+}
+
+.invite {
+  margin: 8px 0 0;
+  text-align: center;
+  color: #ececec;
+  font-size: 11px;
+}
+
+.invite span {
+  color: var(--orange);
+}
+
+.click-hint {
+  margin: 18px 0 10px;
+  text-align: center;
+  color: var(--hint);
+  font-size: 11px;
+}
+
+.stage {
+  position: relative;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.flyer {
+  width: 442px;
+  margin: 0 auto;
+}
+
+.flyer img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  position: absolute;
+  top: 2px;
+  left: 30px;
+  width: 172px;
+}
+
+.info-box {
+  position: relative;
+  z-index: 2;
+  border: 1px solid var(--orange);
+  padding: 5px 6px 4px;
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.25;
+  background: #000;
+}
+
+.info-box p {
+  margin: 0;
+}
+
+.soon {
+  position: relative;
+  z-index: 2;
+  margin: 16px 0 0;
+  color: #ff6200;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rules {
+  position: absolute;
+  top: 56px;
+  left: 812px;
+  width: 190px;
+  color: #e4e4e4;
+  font-size: 11px;
+  line-height: 1.28;
+}
+
+.rules h2 {
+  margin: 0 0 3px;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
+
+.rules ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rule;
+}
+
+.rules li {
+  counter-increment: rule;
+}
+
+.rules li::before {
+  content: counter(rule) ". ";
+}
+
+.bat {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  overflow: visible;
+}
+
+.bat-left {
+  color: #a3480e;
+  width: 84px;
+  top: 84px;
+  left: 108px;
+}
+
+.bat-mid {
+  color: #c45c14;
+  width: 58px;
+  top: 276px;
+  left: 860px;
+}
+
+.bat-low {
+  color: #b85210;
+  width: 36px;
+  top: 590px;
+  left: 912px;
+}
+
+.again {
+  margin: 8px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.divider {
+  width: 448px;
+  margin: 16px auto 12px;
+  border: 0;
+  border-top: 1px solid #444;
+}
+
+.visitor {
+  margin: 0;
+  text-align: center;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.counter {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 5px 1px;
+  border: 1px solid #9a9a9a;
+  background: #000;
+  color: var(--green);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  text-shadow: 0 0 3px #00cc00;
+  vertical-align: -1px;
+}
+
+.nav {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+.ring-row {
+  margin-top: 6px;
+}
+
+.nav a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.nav a.not-yet {
+  color: var(--yellow);
+}
+
+.nav a.ring {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.sep {
+  color: #9a9a9a;
+}
+
+.netscape {
+  margin: 8px 0 0;
+  text-align: center;
+  color: #8d8d8d;
+  font-size: 11px;
+}
+
+footer {
+  width: 820px;
+  margin: 112px auto 18px;
+  color: var(--orange);
+  font-size: 9px;
+  line-height: 1.35;
+  text-align: center;
+}
