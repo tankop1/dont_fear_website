@@ -15,11 +15,29 @@
 }
 
 html,
-body,
-#root {
+body {
   margin: 0;
   min-height: 100%;
   background: #000;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("./assets/HalloweenBackground.jpg");
+  background-repeat: repeat;
+  background-size: 735px 490px;
+  opacity: 0.2;
+  filter: invert(1);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
 }
 
 body {
@@ -31,33 +49,25 @@ body {
 .page {
   width: 1024px;
   margin: 0 auto;
-  min-height: 992px;
-  background: #000;
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 10px 4px;
-  color: #c8c8c8;
-  font-size: 10px;
-  letter-spacing: 0.1px;
 }
 
 .ticker {
+  width: 100%;
   overflow: hidden;
   border-top: 1px solid var(--orange);
   border-bottom: 1px solid var(--orange);
-  margin: 2px 0 14px;
+  margin-bottom: 10px;
 }
 
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker 18s linear infinite;
+  animation: ticker linear infinite;
+  will-change: transform;
 }
 
 .ticker-track span {
+  flex: 0 0 auto;
   color: var(--orange);
   font-weight: 700;
   font-size: 11px;
@@ -72,12 +82,12 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(var(--loop-width) * -1));
   }
 }
 
 h1 {
-  margin: 16px 0 0;
+  margin: 56px 0 0;
   color: var(--orange);
   font-family: "Arial Black", Impact, Haettenschweiler, sans-serif;
   font-size: 22px;
@@ -98,28 +108,26 @@ h1 {
   color: var(--orange);
 }
 
-.click-hint {
-  margin: 18px 0 10px;
-  text-align: center;
-  color: var(--hint);
-  font-size: 11px;
-}
-
 .stage {
   position: relative;
   width: 1024px;
-  margin: 0 auto;
+  margin: 14px auto 0;
 }
 
 .flyer {
-  width: 442px;
+  width: 370px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .flyer img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.flyer:hover img {
+  box-shadow: 0 0 22px 4px #fff;
 }
 
 .info {
@@ -190,112 +198,11 @@ h1 {
   content: counter(rule) ". ";
 }
 
-.bat {
-  position: absolute;
-  z-index: 1;
-  display: block;
-  overflow: visible;
-}
-
-.bat-left {
-  color: #a3480e;
-  width: 84px;
-  top: 84px;
-  left: 108px;
-}
-
-.bat-mid {
-  color: #c45c14;
-  width: 58px;
-  top: 276px;
-  left: 860px;
-}
-
-.bat-low {
-  color: #b85210;
-  width: 36px;
-  top: 590px;
-  left: 912px;
-}
-
-.again {
-  margin: 8px 0 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.divider {
-  width: 448px;
-  margin: 16px auto 12px;
-  border: 0;
-  border-top: 1px solid #444;
-}
-
-.visitor {
-  margin: 0;
-  text-align: center;
-  color: var(--orange);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.counter {
-  display: inline-block;
-  margin-left: 4px;
-  padding: 0 5px 1px;
-  border: 1px solid #9a9a9a;
-  background: #000;
-  color: var(--green);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1.15;
-  text-shadow: 0 0 3px #00cc00;
-  vertical-align: -1px;
-}
-
-.nav {
-  margin: 8px 0 0;
-  text-align: center;
-  font-size: 12px;
-}
-
-.ring-row {
-  margin-top: 6px;
-}
-
-.nav a {
-  color: var(--link);
-  text-decoration: underline;
-}
-
-.nav a.not-yet {
-  color: var(--yellow);
-}
-
-.nav a.ring {
-  color: var(--orange);
-  font-weight: 700;
-}
-
-.sep {
-  color: #9a9a9a;
-}
-
-.netscape {
-  margin: 8px 0 0;
-  text-align: center;
-  color: #8d8d8d;
-  font-size: 11px;
-}
-
 footer {
-  width: 820px;
-  margin: 112px auto 18px;
+  width: 520px;
+  margin: 16px auto 12px;
   color: var(--orange);
-  font-size: 9px;
-  line-height: 1.35;
+  font-size: 10px;
+  line-height: 1.4;
   text-align: center;
 }
