@@ -19,6 +19,7 @@ body {
   margin: 0;
   min-height: 100%;
   background: #000;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -47,7 +48,7 @@ body {
 }
 
 .page {
-  width: 1024px;
+  width: min(1024px, 100%);
   margin: 0 auto;
 }
 
@@ -110,7 +111,7 @@ h1 {
 
 .stage {
   position: relative;
-  width: 1024px;
+  width: min(1024px, 100%);
   margin: 14px auto 0;
 }
 
@@ -199,10 +200,29 @@ h1 {
 }
 
 footer {
-  width: 520px;
+  width: min(520px, 100%);
   margin: 16px auto 12px;
   color: var(--orange);
   font-size: 10px;
   line-height: 1.4;
   text-align: center;
+}
+
+@media (max-width: 1023px) {
+  .page {
+    padding: 0 16px;
+  }
+
+  .info,
+  .rules {
+    display: none;
+  }
+
+  .flyer {
+    width: min(370px, 100%);
+  }
+
+  footer {
+    font-size: 8px;
+  }
 }
